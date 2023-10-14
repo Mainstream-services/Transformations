@@ -1,39 +1,46 @@
-
-body {
-  background: gray;
+body{
+  background-color: yellow;
 }
-.box {
-  width: 300px;
-  height: 300px;
-  border: 2px solid red;
-  background-color: cyan;
-  line-height: 250px;
-  font-size: 50px;
-  color: indigo;
-  text-align: center;
-  perspective: 3rem;
+.container{
+  margin-top: 100px;
+  perspective: 9cm;
+  transform: rotateX(-15deg) rotateY(30deg);
   transform-style: preserve-3d;
-  animation: myAnime 2s linear infinite;
+  width: 100px;
+  height: 100px;
+  margin-left: 100px;
+  backface-visibility: visible;
+  -webkit-backface-visibility: visible;
+ 
 }
-
-@keyframes myAnime {
-  0% {
-    transform: none;
-    background-color: cyan;
-  }
-  25% {
-    transform: perspective(3rem) skewX(45deg) translateX(100px);
-    background-color: green;
-  }
-  50% {
-    transform: perspective(3rem) skewX(45deg) skewY(-45deg) translate(100px, 200px);
-    background-color: orange;
-  }
-  75% {
-    transform: perspective(3rem) skewX(45deg) skewY(-45deg) translate(100px, 300px);
-    background-color: orange;}
-  100% {
-    transform: perspective(3rem) skewX(45deg) translate(100px, 100px) skewY(-45deg) ;
-    background-color: red;
-  }
+.cube{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  font-size: 100px;
+  text-align: center;
 }
+.front{
+  transform: translate3d(0,0, 50px);
+  background-color: red;
+  
+}
+.left{
+  transform: rotateY(-90deg)translate3d(0,0,50px);
+  background-color: skyblue;
+  z-index: 1;
+}
+.top{
+  transform:rotateX(90deg)translate3d(0,0,50px);
+  background-color: cyan;
+  z-index: 1;
+}
+.back{transform:rotateZ(90deg) translate3d(0,0, 50px);
+background-color: lightgray;
+z-index: 1;}
+.right{transform:rotateY(90deg) translate3d(0,0, 50px);
+  background-color: green;}
+.bottom{transform:rotateX(-90deg) translate3d(0,0, 50px);
+    background-color: purple;}
+  
